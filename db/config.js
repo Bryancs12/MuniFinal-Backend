@@ -5,7 +5,7 @@ dotenv.config()
 export const db = new Sequelize(process.env.DBNAME, process.env.DBUSER, process.env.PASSWORD, {
     host: process.env.HOST,
     dialect: 'mariadb',
-    //port: process.env.PORT,
+    port: process.env.PORT,
     pool: {
       max: 5,
       min: 0,
