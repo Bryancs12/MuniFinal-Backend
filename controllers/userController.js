@@ -270,7 +270,7 @@ export const resetPassword = async(request, response) =>{
         if(user){
 
             //declaramos la contrasena por defecto
-            const defaultPassword = '123456'; // preguntar que contrasena poner por default
+            const defaultPassword = 'Muni@9876!!'; // preguntar que contrasena poner por default
             //encriptamos esa contrasena por defecto y se la asignamos la contrasena del update
             const encryp = bcrypt.hashSync(defaultPassword, 10);
 
