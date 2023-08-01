@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken"
 import { AccountRoles } from "../models/AccountRolesModel.js";
 import { usersData } from "../dataTable/data.js";
 import { Roles } from "../models/Roles.js";
+import { Op } from "sequelize";
 
 export const getAllUsers = async(request, response) =>{
 
@@ -70,7 +71,7 @@ export const getAllZonificacionUsers = async(request, response) =>{
             model: AccountRoles,
             attributes: ['role_id'],
             where:{
-                role_id : 4
+                [Op.or]: [{role_id: 4}, {role_id: 8}]
             }
         },
       
@@ -99,7 +100,7 @@ export const getAllZonificacionVBUsers = async(request, response) =>{
             model: AccountRoles,
             attributes: ['role_id'],
             where:{
-                role_id : 8
+                [Op.or]: [{role_id: 4}, {role_id: 8}]
             }
         },
       
